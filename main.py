@@ -1,4 +1,4 @@
-from lexer import Lexer, TokenKind
+from libs.lexer import Lexer, TokenKind
 
 program : str = """\
 main :: () -> int {
@@ -9,6 +9,8 @@ main :: () -> int {
 
 def main(prgm):
     lexer = Lexer(prgm)
+    # And now we take it thru the parser assigning nodes from ast-tree 
+    # ...later
     for tok in lexer.tokens():
         print(f"{tok.line}:{tok.column}  {tok.kind.name:12}  {tok.lexeme!r}")
 
